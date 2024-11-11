@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>Data Display</title>
+</head>
+<body>
+    <h1>Stored Data</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Add New Data</h2>
+    <form method="post" action="/add">
+        Name: <input type="text" name="name" required>
+        Age: <input type="number" name="age" required>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
